@@ -1,3 +1,11 @@
+/***********************************************
+ * Purpose :This program takes a date as input and prints the
+ * 			 day of the week that date falls on.​
+ *           
+ * @author  Sujit Chincholkar
+ * @version 1.0
+ * @since   24/08/2017          
+ ***********************************************/
 package com.bridgelabz.programs;
 
 import com.bridgelabz.utility.Utility;

@@ -1,3 +1,11 @@
+/***********************************************
+ * Purpose :This program calculate​ ​the​ ​minimum​ ​number of​ Notes​ as​ well​ as​ the​ ​
+ * 			 Notes​​ to​​ be​ returned​ by​ the​​ Vending​​ Machine​​ as​ a Change​
+ *           
+ * @author  Sujit Chincholkar
+ * @version 1.0
+ * @since   24/08/2017          
+ ***********************************************/
 package com.bridgelabz.programs;
 
 import com.bridgelabz.utility.Utility;

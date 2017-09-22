@@ -1,3 +1,10 @@
+/***********************************************
+ * purpose : To store all logic of the programs
+ *           
+ * @author  Sujit Chincholkar
+ * @version 1.0
+ * @since   24/08/2017          
+ ***********************************************/
 package com.bridgelabz.utility;
 
 import java.io.BufferedReader;
@@ -14,6 +21,11 @@ import com.bridgelabz.programs.Compare;
 
 public class Utility {
 	static Scanner scanner = new Scanner(System.in);
+	/**This method checks if given strings are anagram
+	 * @param string1
+	 * @param string2
+	 * @return It returns true if strings are anagram
+	 */
 	public static boolean isAnagram(String string1, String string2) {
 			boolean isAnagram = true;
 			char array1[] = string1.toLowerCase().toCharArray();
@@ -36,6 +48,10 @@ public class Utility {
 			return isAnagram;
 		}
 	
+	/**This method checks if given string is palindrome or not
+	 * @param string
+	 * @return	returns true if string is palindrome
+	 */
 	public static boolean isPalindrome(String string) {
 			char array[] = string.toLowerCase().toCharArray();
 			boolean isPalindrome = true;
@@ -52,6 +68,10 @@ public class Utility {
 	
 		}
 	
+	/**This method checks if given number is prime or not
+	 * @param number
+	 * @return It returns true if number is prime
+	 */
 	public static boolean isPrime(int number) {
 
 		// condition to check if no less than two
@@ -71,15 +91,21 @@ public class Utility {
 		return true;
 	}
 
+	/**This method prints prime numbers from 0 to 1000
+	 * 
+	 */
 	public static void printPrimes() {
 		int number = 0;
-		for (number = 0; number <= 1000; number++) {
+		for (number = 2; number <= 1000; number++) {
 			if (isPrime(number)) {
 				System.out.println(number);
 			}
 		}
 	}
 
+	/**This method prints prime number which are palindrome
+	 * 
+	 */
 	public static void printPrimePalindrome() {
 		for (int number = 2; number < 1000; number++) {
 			if (isPrime(number)) {
@@ -90,20 +116,25 @@ public class Utility {
 		}
 	}
 
-	public static boolean binarySearch(int arr[], int num) {
+	/**This method check if given number is present in array 
+	 * @param array
+	 * @param number
+	 * @return true if number is present in array otherwise returns false 
+	 */
+	public static boolean binarySearch(int array[], int number) {
 
 		int low = 0;
 		boolean isPresent = false;
-		int high = arr.length - 1;
+		int high = array.length - 1;
 		int mid = high / 2;
 		while (high >= low) {
-			if (arr[mid] == num) {
+			if (array[mid] == number) {
 				isPresent = true;
 				break;
-			} else if (arr[mid] > num) {
+			} else if (array[mid] > number) {
 				high = mid - 1;
 				mid = (low + high) / 2;
-			} else if (arr[mid] < num) {
+			} else if (array[mid] < number) {
 				low = mid + 1;
 				mid = (low + high) / 2;
 			}
@@ -111,6 +142,12 @@ public class Utility {
 		return isPresent;
 	}
 
+
+	/**This method check if given number is present in array 
+	 * @param array
+	 * @param number
+	 * @return true if number is present in array otherwise returns false 
+	 */
 	public static <T extends Comparable<T>> boolean binarySearch(T array[], T search) {
 		int low = 0;
 		boolean isPresent = false;
@@ -131,6 +168,9 @@ public class Utility {
 		return isPresent;
 	}
 
+	/**This method sort the given array in ascending order
+	 * @param array
+	 */
 	public static void insertionSort(int array[]) {
 
 		for (int i = 1; i < array.length; i++) {
@@ -144,7 +184,24 @@ public class Utility {
 		}
 
 	}
-	
+	/**This method sorts array in descending order
+	 * @param array
+	 */
+	public static void insertionSortDesc(int array[]) { 
+		for (int i = 1; i < array.length; i++) {
+			int key = array[i];
+			int j = i - 1;
+			while (j >= 0 && array[j] < key) {
+				array[j + 1] = array[j];
+				j--;
+			}
+			array[j + 1] = key;
+		}
+
+	}
+	/**This method sort the given array in ascending order
+	 * @param array
+	 */
 	public static <T extends Comparable<T>> void insertionSort(T array[]) {
 
 		for (int i = 1; i < array.length; i++) {
@@ -159,6 +216,9 @@ public class Utility {
 
 	}
 
+	/**This method sorts given array
+	 * @param array
+	 */
 	public static void bubbleSort(int array[]) {
 
 		int temp;
@@ -174,6 +234,9 @@ public class Utility {
 
 	}
 
+	/**This method sort the given array in ascending order
+	 * @param array
+	 */
 	public static <T extends Comparable<T>> void bubbleSort(T array[]) {
 		T temp;
 		for (int i = 0; i < array.length - 1; i++) {
@@ -187,6 +250,12 @@ public class Utility {
 		}
 	}
 	
+	/**This method gives day of week for given day/month/year
+	 * @param day
+	 * @param month
+	 * @param year
+	 * @return returns 0 for sunday,1 for monday and so on
+	 */
 	public static int dayOfWeek(int day, int month, int year) {
 		int m0, y0, d0, x;
 
@@ -197,6 +266,11 @@ public class Utility {
 		return d0;
 	}
 
+	/**This method converts temperature from current time unit to alternative unit
+	 * @param temperature
+	 * @param currentUnit
+	 * @return
+	 */
 	public static float convertTemperature(float temperature, char currentUnit) {
 		float conversion = 0.0f;
 		if (currentUnit == 'f' || currentUnit == 'F') {
@@ -207,6 +281,12 @@ public class Utility {
 		return conversion;
 	}
 
+	/**This method calculates monthly payment for given payment,rate and time in years
+	 * @param payment
+	 * @param rate
+	 * @param year
+	 * @return returns monthly payment
+	 */
 	public static float monthlyPayment(float payment, float rate, float year) {
 		float monthlyPay = 0.0f;
 		int months = (int) (12 * year);
@@ -215,6 +295,11 @@ public class Utility {
 		return monthlyPay;
 	}
 
+	/**This method calculates square root of give number
+	 * @param number
+	 * @return returns square root
+	 * 
+	 */
 	public static double sqrt(int number) {
 		double epslion = 1e-15;
 		double t = number;
@@ -225,6 +310,10 @@ public class Utility {
 		return t;
 	}
 
+	/**This method converts decimal number into binary
+	 * @param number
+	 * @return returns binary number
+	 */
 	public static String toBinary(int number) {
 		int rem;
 		String bin[] = { "0", "1" };
@@ -243,6 +332,10 @@ public class Utility {
 		return binary;
 	}
 
+	/**This method swap nibbles of given binary
+	 * @param binary
+	 * @return returns swapped binary
+	 */
 	public static String swappedNibbles(String binary) {
 		binary = binary.replaceAll(" ", "");
 		String lowerNibble = binary.substring(0, 4);
@@ -251,6 +344,10 @@ public class Utility {
 		return swappedBinary;
 	}
 
+	/**This method check if number is power of two or not
+	 * @param number
+	 * @return returns true if number is power of 2
+	 */ 
 	public static boolean isPowerOfTwo(int number) {
 		int power = 0;
 		int division = number;
@@ -261,6 +358,10 @@ public class Utility {
 		return number == (int) Math.pow(2, power);
 	}
 
+	/**This method converts binary to decimal
+	 * @param binary
+	 * @return Converted decimal number
+	 */
 	public static int binaryToDecimal(String binary) {
 		int decimal = 0, power = 0;
 		binary = binary.replaceAll(" ", "");
@@ -275,6 +376,9 @@ public class Utility {
 
 	}
 
+	/**This method prints prime number which is anagram
+	 * 
+	 */
 	public static void primeAnagram() {
 		ArrayList<String> primes = new ArrayList<>();
 		for (int i = 0; i < 1000; i++) {
@@ -293,11 +397,19 @@ public class Utility {
 
 	}
 
+	/**This method calculates time difference between start time and current time
+	 * @param start
+	 * @return returns time in milliseconds
+	 */
 	public static long elapsedTime(long start) {
 		long end = System.currentTimeMillis();
 		return end - start;
 	}
 
+	/**This method guess number in given range
+	 * @param first -start of range
+	 * @param last	-end number
+	 */
 	public static void findNumber(int first, int last) {
 		int middle = (first + last) / 2;
 		if (first < last) {
@@ -366,6 +478,10 @@ public class Utility {
 		return returnArray;
 
 	}
+	/**This method read file into string array
+	 * @param filePath
+	 * @return -Returns string array of words from file
+	 */ 
 	public static String[] readFile(String filePath) {
 		String words[] = {};
 		ArrayList<String> lines = new ArrayList<String>();
@@ -395,10 +511,10 @@ public class Utility {
 		return words;
 	}
 
-	/**
+	/** This method appends word on filePath
 	 * @param word
 	 * @param filePath
-	 *            This method appends word on filePath
+	 *           
 	 */
 	public static void appendFile(String word, String filePath) {
 
@@ -417,6 +533,10 @@ public class Utility {
 		}
 	}
 
+	/**This method write given string on given filePath
+	 * @param word     -Array of String to write
+	 * @param filePath -File path with file name
+	 */
 	public static void writeFile(String word[], String filePath) {
 
 		try {
@@ -436,6 +556,11 @@ public class Utility {
 		}
 	}
 
+	/**This method calculates minimum note to return given change
+	 * @param noteCounts -holds note count
+	 * @param change     -change to return
+	 * @param pos		 
+	 */
 	public static void returnNotes(int noteCounts[], int change, int pos) {
 		int notes[] = { 1000, 500, 100, 50, 10, 2, 1 };
 		if (pos < notes.length) {

@@ -1,3 +1,12 @@
+/***********************************************
+ * Purpose :This program ​ ​ takes​ ​ a ​ ​ command-line​ ​ argument​ ​ N,​ ​ asks​ ​ you​ ​ to​ ​ think​ ​ of​ ​ a ​ ​
+ * 			 number between​ ​ 0 ​ ​ and​ ​ N-1,​ ​ where​ ​ N ​=​ 2^n,​and​​ always​​ guesses​​ the​ answer​ with​ n
+ *			questions​
+ *           
+ * @author  Sujit Chincholkar
+ * @version 1.0
+ * @since   24/08/2017          
+ ***********************************************/
 package com.bridgelabz.programs;
 
 import java.util.Scanner;

@@ -1,3 +1,11 @@
+/***********************************************
+ * Purpose :This program takes total payment,rate and time 
+ * 			and prints monthly payment. ​
+ *           
+ * @author  Sujit Chincholkar
+ * @version 1.0
+ * @since   24/08/2017          
+ ***********************************************/
 package com.bridgelabz.programs;
 
 import com.bridgelabz.utility.Utility;

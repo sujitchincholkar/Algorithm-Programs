@@ -1,3 +1,10 @@
+/***********************************************
+ * Purpose :This program compute the square root of a nonnegative number c
+ *			given​ ​ in​ ​ the​ ​ input​ ​ using​ ​ Newton's​ ​ method: 
+ * @author  Sujit Chincholkar
+ * @version 1.0
+ * @since   24/08/2017          
+ ***********************************************/
 package com.bridgelabz.programs;
 
 import com.bridgelabz.utility.Utility;
